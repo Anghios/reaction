@@ -10,6 +10,29 @@ export default function ReactionGame() {
   const startTimeRef = useRef(null);
   const timeoutRef = useRef(null);
 
+  // Cargar datos de localStorage al iniciar
+  useEffect(() => {
+    const savedAttempts = localStorage.getItem('reactionAttempts');
+    const savedBestTime = localStorage.getItem('reactionBestTime');
+
+    if (savedAttempts) {
+      const parsedAttempts = JSON.parse(savedAttempts);
+      setAttempts(parsedAttempts);
+    }
+
+    if (savedBestTime) {
+      setBestTime(parseInt(savedBestTime));
+    }
+  }, []);
+
+  // Guardar datos en localStorage cuando cambien los intentos
+  useEffect(() => {
+    if (attempts.length > 0) {
+      localStorage.setItem('reactionAttempts', JSON.stringify(attempts));
+      localStorage.setItem('reactionBestTime', bestTime.toString());
+    }
+  }, [attempts, bestTime]);
+
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
