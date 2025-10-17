@@ -7,6 +7,7 @@ export default function ReactionGame() {
   const [reactionTime, setReactionTime] = useState(null);
   const [bestTime, setBestTime] = useState(null);
   const [attempts, setAttempts] = useState([]);
+  const [stars, setStars] = useState(0);
   const startTimeRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -23,6 +24,18 @@ export default function ReactionGame() {
     if (savedBestTime) {
       setBestTime(parseInt(savedBestTime));
     }
+  }, []);
+
+  // Obtener estrellas de GitHub
+  useEffect(() => {
+    fetch('https://api.github.com/repos/Anghios/reaction')
+      .then(response => response.json())
+      .then(data => {
+        if (data.stargazers_count !== undefined) {
+          setStars(data.stargazers_count);
+        }
+      })
+      .catch(error => console.error('Error fetching GitHub stars:', error));
   }, []);
 
   // Guardar datos en localStorage cuando cambien los intentos
@@ -214,6 +227,25 @@ export default function ReactionGame() {
         <div>2. Espera a que se ponga verde</div>
         <div>3. ¡Haz clic lo más rápido posible!</div>
       </div>
+
+      <a
+        href="https://github.com/Anghios/reaction"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className="absolute bottom-8 right-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-3 text-white text-xs hover:bg-opacity-30 transition-all cursor-pointer"
+      >
+        <div className="flex items-center gap-2">
+          <Icon icon="mdi:github" className="w-5 h-5" />
+          <div>
+            <div className="font-semibold">Developed by Anghios</div>
+            <div className="flex items-center gap-1 mt-1">
+              <Icon icon="mdi:star" className="w-3 h-3" />
+              <span>{stars} stars</span>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   );
 }
