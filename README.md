@@ -8,9 +8,12 @@ Una aplicación web interactiva para medir tu tiempo de reacción. Pon a prueba 
 - Sistema de estados: espera (rojo) → reacción (verde)
 - Detección de clics prematuros
 - Panel de estadísticas en tiempo real
+- **Persistencia de datos**: Tus estadísticas se guardan automáticamente en localStorage
 - Mensajes personalizados según tu rendimiento
 - Diseño responsive y moderno
 - Iconos de Iconify
+- **Contador de estrellas de GitHub**: Muestra las estrellas del repositorio en tiempo real
+- Enlace directo al repositorio desde la interfaz
 
 ## Tecnologías
 
