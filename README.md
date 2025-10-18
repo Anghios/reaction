@@ -1,86 +1,89 @@
-# Juego de Reacción
+# Reaction Game
 
-Una aplicación web interactiva para medir tu tiempo de reacción. Pon a prueba tus reflejos y compite contra tus propios récords.
+An interactive web application to measure your reaction time. Test your reflexes and compete against your own records.
 
 ## 🎮 [LIVE DEMO](https://reaction.anghios.es/)
 
-## Características
+## Features
 
-- Interfaz intuitiva con cambio de colores
-- Sistema de estados: espera (rojo) → reacción (verde)
-- Detección de clics prematuros
-- Panel de estadísticas en tiempo real
-- **Persistencia de datos**: Tus estadísticas se guardan automáticamente en localStorage
-- Mensajes personalizados según tu rendimiento
-- Diseño responsive y moderno
-- Iconos de Iconify
-- **Contador de estrellas de GitHub**: Muestra las estrellas del repositorio en tiempo real
-- Enlace directo al repositorio desde la interfaz
+- Intuitive interface with color transitions
+- State system: wait (red) → react (green)
+- Early click detection
+- Real-time statistics panel
+- **Data persistence**: Your stats are automatically saved in localStorage
+- Personalized messages based on your performance
+- Responsive and modern design
+- Iconify icons
+- **GitHub stars counter**: Shows repository stars in real-time
+- Direct link to the repository from the interface
+- Mobile touch support
+- Keyboard support (spacebar)
+- PWA ready with dynamic theme colors
 
-## Tecnologías
+## Technologies
 
-- **React** - Framework de UI
-- **Vite** - Build tool y dev server
-- **Tailwind CSS** - Estilos
-- **Lucide React** - Iconos principales
-- **Iconify** - Biblioteca de iconos
+- **React** - UI Framework
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Styling
+- **Lucide React** - Main icons
+- **Iconify** - Icon library
 
-## Instalación
+## Installation
 
-Clona el repositorio:
+Clone the repository:
 
 ```bash
 git clone https://github.com/Anghios/reaction.git
 cd reaction
 ```
 
-Instala las dependencias:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-## Uso
+## Usage
 
-### Modo desarrollo
+### Development mode
 
-Para ejecutar la aplicación en modo desarrollo:
+To run the application in development mode:
 
 ```bash
 npm run dev
 ```
 
-La aplicación estará disponible en `http://localhost:5173`
+The application will be available at `http://localhost:5173`
 
-### Compilar para producción
+### Build for production
 
-Para compilar la aplicación:
+To build the application:
 
 ```bash
 npm run build
 ```
 
-Esto generará una carpeta `/dist` con los archivos optimizados listos para producción.
+This will generate a `/dist` folder with optimized files ready for production.
 
-### Desplegar
+### Deploy
 
-Sube el contenido de la carpeta `/dist` generada a tu hosting o servidor web.
+Upload the contents of the generated `/dist` folder to your hosting or web server.
 
-## Cómo jugar
+## How to play
 
-1. Haz clic en la pantalla para empezar
-2. Espera a que el fondo se ponga verde (¡no hagas clic en rojo!)
-3. Haz clic lo más rápido posible cuando veas el verde
-4. Observa tus estadísticas y trata de mejorar tu récord
+1. Click on the screen to start
+2. Wait for the background to turn green (don't click on red!)
+3. Click or press spacebar as fast as possible when you see green
+4. Check your statistics and try to beat your record
 
-## Rangos de rendimiento
+## Performance ranges
 
-- **Menos de 200ms**: ¡Increíble! Reflejos de ninja
-- **200-250ms**: ¡Excelente! Muy rápido
-- **250-300ms**: ¡Bien hecho! Buen tiempo
-- **300-400ms**: No está mal, puedes mejorar
-- **Más de 400ms**: Un poco lento, inténtalo otra vez
+- **Under 200ms**: Amazing! Ninja reflexes
+- **200-250ms**: Excellent! Very fast
+- **250-300ms**: Well done! Good time
+- **300-400ms**: Not bad, you can improve
+- **Over 400ms**: A bit slow, try again
 
-## Licencia
+## License
 
 MIT
