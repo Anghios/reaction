@@ -114,7 +114,12 @@ export default function ReactionGame() {
 
     timeoutRef.current = setTimeout(() => {
       setGameState('green');
-      startTimeRef.current = Date.now();
+      // Usar requestAnimationFrame para guardar el tiempo DESPUÉS de que se pinte el verde
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          startTimeRef.current = performance.now();
+        });
+      });
     }, randomDelay);
   };
 
@@ -128,8 +133,8 @@ export default function ReactionGame() {
       }
       setGameState('tooearly');
     } else if (gameState === 'green') {
-      const endTime = Date.now();
-      const reaction = endTime - startTimeRef.current;
+      const endTime = performance.now();
+      const reaction = Math.round(endTime - startTimeRef.current);
       setReactionTime(reaction);
 
       const newAttempts = [...attempts, reaction];
