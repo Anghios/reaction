@@ -200,26 +200,26 @@ export default function ReactionGame() {
       case 'waiting':
         return {
           icon: <Zap className="w-12 h-12 sm:w-16 sm:h-16 mb-3 sm:mb-4 mx-auto" />,
-          title: '¡Prueba tu velocidad!',
-          subtitle: 'Haz clic para empezar'
+          title: 'Test your speed!',
+          subtitle: 'Click to start'
         };
       case 'ready':
         return {
           icon: <Icon icon="mdi:timer-outline" className="w-12 h-12 sm:w-16 sm:h-16 mb-3 sm:mb-4 mx-auto animate-pulse" />,
-          title: 'Espera...',
-          subtitle: 'Prepárate para el verde'
+          title: 'Wait...',
+          subtitle: 'Get ready for green'
         };
       case 'green':
         return {
           icon: <Icon icon="mdi:circle" className="w-12 h-12 sm:w-16 sm:h-16 mb-3 sm:mb-4 mx-auto text-green-400" />,
-          title: '¡AHORA!',
-          subtitle: '¡Haz clic rápido!'
+          title: 'NOW!',
+          subtitle: 'Click fast!'
         };
       case 'tooearly':
         return {
           icon: <Icon icon="mdi:close-circle" className="w-12 h-12 sm:w-16 sm:h-16 mb-3 sm:mb-4 mx-auto" />,
-          title: '¡Demasiado pronto!',
-          subtitle: 'Espera a que se ponga verde'
+          title: 'Too early!',
+          subtitle: 'Wait for green'
         };
       case 'result':
         return {
@@ -235,27 +235,27 @@ export default function ReactionGame() {
   const getPerformanceMessage = (time) => {
     if (time < 200) return (
       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-        ¡Increíble! Reflejos de ninja <Icon icon="game-icons:ninja-head" className="w-5 h-5 sm:w-6 sm:h-6" />
+        Amazing! Ninja reflexes <Icon icon="game-icons:ninja-head" className="w-5 h-5 sm:w-6 sm:h-6" />
       </span>
     );
     if (time < 250) return (
       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-        ¡Excelente! Muy rápido <Icon icon="mdi:lightning-bolt" className="w-5 h-5 sm:w-6 sm:h-6" />
+        Excellent! Very fast <Icon icon="mdi:lightning-bolt" className="w-5 h-5 sm:w-6 sm:h-6" />
       </span>
     );
     if (time < 300) return (
       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-        ¡Bien hecho! Buen tiempo <Icon icon="mdi:thumb-up" className="w-5 h-5 sm:w-6 sm:h-6" />
+        Well done! Good time <Icon icon="mdi:thumb-up" className="w-5 h-5 sm:w-6 sm:h-6" />
       </span>
     );
     if (time < 400) return (
       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-        No está mal, puedes mejorar <Icon icon="mdi:target" className="w-5 h-5 sm:w-6 sm:h-6" />
+        Not bad, you can improve <Icon icon="mdi:target" className="w-5 h-5 sm:w-6 sm:h-6" />
       </span>
     );
     return (
       <span className="flex items-center justify-center gap-1.5 sm:gap-2">
-        Un poco lento, inténtalo otra vez <Icon icon="mdi:snail" className="w-5 h-5 sm:w-6 sm:h-6" />
+        A bit slow, try again <Icon icon="mdi:snail" className="w-5 h-5 sm:w-6 sm:h-6" />
       </span>
     );
   };
@@ -283,7 +283,7 @@ export default function ReactionGame() {
         {(gameState === 'result' || gameState === 'tooearly') && (
           <button className="bg-white text-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-bold hover:bg-gray-100 transition-colors flex items-center gap-2 mx-auto">
             <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5" />
-            Intentar otra vez
+            Try again
           </button>
         )}
       </div>
@@ -292,12 +292,12 @@ export default function ReactionGame() {
         <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 bg-black bg-opacity-30 rounded-lg p-2 sm:p-4 text-white">
           <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 flex items-center gap-1 sm:gap-2">
             <Icon icon="mdi:chart-bar" className="w-4 h-4 sm:w-5 sm:h-5" />
-            Estadísticas
+            Statistics
           </div>
           <div className="text-[10px] sm:text-xs space-y-0.5 sm:space-y-1">
-            <div>Intentos: {attempts.length}</div>
-            <div>Mejor: {bestTime} ms</div>
-            <div>Promedio: {getAverageTime()} ms</div>
+            <div>Attempts: {attempts.length}</div>
+            <div>Best: {bestTime} ms</div>
+            <div>Average: {getAverageTime()} ms</div>
           </div>
         </div>
       )}
@@ -305,12 +305,12 @@ export default function ReactionGame() {
       <div className="absolute top-4 right-4 sm:top-8 sm:right-8 bg-black bg-opacity-30 rounded-lg p-2 sm:p-3 text-white text-[10px] sm:text-xs max-w-[160px] sm:max-w-xs">
         <div className="font-semibold mb-1 flex items-center gap-1 sm:gap-2">
           <Icon icon="mdi:clipboard-list-outline" className="w-3 h-3 sm:w-4 sm:h-4" />
-          Cómo jugar:
+          How to play:
         </div>
         <div className="space-y-0.5">
-          <div>1. Haz clic para empezar</div>
-          <div>2. Espera a que se ponga verde</div>
-          <div>3. ¡Haz clic o pulsa espacio!</div>
+          <div>1. Click to start</div>
+          <div>2. Wait for green</div>
+          <div>3. Click or press space!</div>
         </div>
       </div>
 

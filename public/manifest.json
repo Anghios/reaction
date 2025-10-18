@@ -1,7 +1,7 @@
 {
-  "name": "Juego de Reacción",
-  "short_name": "Reacción",
-  "description": "Prueba tu velocidad de reacción",
+  "name": "Reaction Game",
+  "short_name": "Reaction",
+  "description": "Test your reaction speed",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#3b82f6",
