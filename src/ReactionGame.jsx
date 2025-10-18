@@ -55,7 +55,7 @@ export default function ReactionGame() {
     };
   }, []);
 
-  // Actualizar el theme-color del navegador según el estado del juego
+  // Actualizar el theme-color del navegador y el background del body según el estado del juego
   useEffect(() => {
     const getThemeColor = () => {
       switch (gameState) {
@@ -74,10 +74,17 @@ export default function ReactionGame() {
       }
     };
 
+    const color = getThemeColor();
+
+    // Actualizar meta tag theme-color
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     if (themeColorMeta) {
-      themeColorMeta.setAttribute('content', getThemeColor());
+      themeColorMeta.setAttribute('content', color);
     }
+
+    // Actualizar color de fondo del body para iOS
+    document.body.style.backgroundColor = color;
+    document.documentElement.style.backgroundColor = color;
   }, [gameState]);
 
   // Manejar la barra espaciadora
@@ -298,7 +305,7 @@ export default function ReactionGame() {
         <div className="space-y-0.5">
           <div>1. Haz clic para empezar</div>
           <div>2. Espera a que se ponga verde</div>
-          <div>3. ¡Haz clic lo más rápido posible!</div>
+          <div>3. ¡Haz clic o pulsa espacio!</div>
         </div>
       </div>
 
